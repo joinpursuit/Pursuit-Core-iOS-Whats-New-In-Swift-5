@@ -120,3 +120,73 @@ let cities = ["Stockholm": true,
 // output ["Stockholm": true, "Boston": true, "San Francisco" : true]
 let validCities = cities.compactMapValues{$0}
 print(validCities)
+
+
+
+
+//==========================================================================
+// In class demo on 07.31.16
+//==========================================================================
+
+
+/* Warmup Question: using compactMapValues
+ (1) In the grades dictionary below find and print the valid names, integer grade pairings, a letter grade is NOT valid (reminder compactMapValues performs a transformation and only returns non-nil key,value pairings)
+ (2) Calculate the average of the valid grades
+ 
+ Output:
+ Valid grades: ["William": 94, "Cathy": 80, "Bernie": 65, "George": 75, "Asher": 59, "Arthur": 77]
+ Average of valid grades: 75
+ */
+
+let grades = ["Cathy": "80",
+              "Bertie": "A",
+              "George": "75",
+              "Esther": "C",
+              "William": "94",
+              "Asher": "59",
+              "Vincent": "B",
+              "Arthur": "77",
+              "Bernie": "65",
+              "James": "B"
+]
+
+//  (1)
+let validGrades = grades.compactMapValues { Int($0) }
+print(validGrades)
+// ["George": 75, "Asher": 59, "William": 94, "Arthur": 77, "Bernie": 65, "Cathy": 80]
+
+// (2)
+let gradeValues = validGrades.values
+let averageGrades = gradeValues.reduce(0, +) / gradeValues.count
+print(averageGrades) // 75
+
+
+// ==============================================
+// String Interpolation Protocol in Swift 5
+// ==============================================
+
+let name = "Matt"
+print("Good morning \(name)")
+
+struct User {
+  let name: String
+  let age: Int
+  let dateAdded: Date
+}
+
+let jiang = User(name: "catman", age: 21, dateAdded: Date())
+print("User details: \(jiang)")
+
+extension String.StringInterpolation {
+  mutating func appendInterpolation(_ value: User) {
+    appendInterpolation("\(value.name) is \(value.age) years old, added on \(value.dateAdded)")
+  }
+  mutating func appendInterpolation(_ value: User, dateFormattingStyle: DateFormatter.Style) {
+    let  dateFormatter = DateFormatter()
+    dateFormatter.dateStyle = dateFormattingStyle
+    let dateString = dateFormatter.string(from: value.dateAdded)
+    appendInterpolation("\(value.name) was added on \(dateString)")
+  }
+}
+print("User details using custom interpolation: \(jiang)")
+print("User details update: \(jiang, dateFormattingStyle: .long)")
