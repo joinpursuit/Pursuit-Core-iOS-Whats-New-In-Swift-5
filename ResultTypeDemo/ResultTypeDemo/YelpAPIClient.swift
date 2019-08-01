@@ -18,8 +18,8 @@ enum NetworkError: Error {
 class YelpAPIClient {
   // Result type in Swift 5 in a generic enum used on asychrousnous calls,
   // the Result is an enum that validates a .success or .failure against the call
-  public func searchBusinesses(completion: @escaping (Result<Int, NetworkError>) -> Void) {
-    let endPointURL = "https://api.yelp.com/v3/bus inesses/search?term=coffee&location=10023"
+  public func searchBusinesses(completion: @escaping (Result<[Business], NetworkError>) -> Void) {
+    let endPointURL = "https://api.yelp.com/v3/businesses/search?term=coffee&location=10023"
     guard let url = URL(string: endPointURL) else {
       completion(.failure(.badURL))
       return
@@ -31,7 +31,12 @@ class YelpAPIClient {
       if let error = error {
         completion(.failure(.apiError(error)))
       } else if let data = data {
-        // TODO: using JSONDecoder() parse data to [Business]
+        do {
+          let searchResult = try JSONDecoder().decode(BusinessesSearch.self, from: data)
+          completion(.success(searchResult.businesses))
+        } catch {
+          completion(.failure(.jsonDecodingError(error)))
+        }
       }
     }
     task.resume()
