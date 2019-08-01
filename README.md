@@ -21,3 +21,7 @@
 * Result Type 
 
 #### [Swift Playground](https://github.com/joinpursuit/Pursuit-Core-iOS-Whats-New-In-Swift-5/blob/master/Swift5Playground.playground/Contents.swift)
+
+#### [Xcode Project - ResultTypeDemo](https://github.com/joinpursuit/Pursuit-Core-iOS-Whats-New-In-Swift-5/tree/master/ResultTypeDemo)
+
+> In this Xcode project the Yelp api client makes use to the new Result type enum in Swift 5. [Result](https://developer.apple.com/documentation/swift/result)
