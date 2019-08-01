@@ -14,6 +14,7 @@
 		571B462622F1F3AB00E7691D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571B462422F1F3AB00E7691D /* LaunchScreen.storyboard */; };
 		571B462E22F1F4F000E7691D /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B462D22F1F4F000E7691D /* Business.swift */; };
 		571B463022F1F5D400E7691D /* YelpAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B462F22F1F5D400E7691D /* YelpAPIClient.swift */; };
+		577F204822F3521F00E00788 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577F204722F3521F00E00788 /* SecretKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		571B462722F1F3AB00E7691D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		571B462D22F1F4F000E7691D /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		571B462F22F1F5D400E7691D /* YelpAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPIClient.swift; sourceTree = "<group>"; };
+		577F204722F3521F00E00788 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				571B461B22F1F3A800E7691D /* AppDelegate.swift */,
 				571B461D22F1F3A800E7691D /* ViewController.swift */,
 				571B462D22F1F4F000E7691D /* Business.swift */,
+				577F204722F3521F00E00788 /* SecretKeys.swift */,
 				571B462F22F1F5D400E7691D /* YelpAPIClient.swift */,
 				571B461F22F1F3A800E7691D /* Main.storyboard */,
 				571B462222F1F3AB00E7691D /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				571B463022F1F5D400E7691D /* YelpAPIClient.swift in Sources */,
 				571B461E22F1F3A800E7691D /* ViewController.swift in Sources */,
 				571B461C22F1F3A800E7691D /* AppDelegate.swift in Sources */,
+				577F204822F3521F00E00788 /* SecretKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
