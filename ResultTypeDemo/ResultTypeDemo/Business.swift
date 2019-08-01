@@ -19,7 +19,7 @@ struct Business: Codable {
   let image_url: String
   let is_closed: Bool
   let url: String
-  let rating: Int
+  let rating: Double
   let location: Location
   let phone: String
   let coordinates: Coordinate

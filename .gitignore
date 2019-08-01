@@ -68,3 +68,6 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 .DS_Store
+
+# Hiding API Keys 
+SecretKeys.swift
