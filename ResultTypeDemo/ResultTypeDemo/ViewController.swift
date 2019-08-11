@@ -10,18 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
   private let apiClient = YelpAPIClient()
+  private var businesses = [Business]() {
+    didSet {
+      // code here
+    }
+  }
   override func viewDidLoad() {
     super.viewDidLoad()
     searchBusinesses()
   }
   
   private func searchBusinesses() {
-    apiClient.searchBusinesses { result in
+    apiClient.searchBusinesses { [weak self] result in
       switch result {
       case .failure(let error):
         print("error: \(error)")
       case .success(let businesses):
         print("found \(businesses.count) businesses")
+        self?.businesses = businesses
       }
     }
   }
